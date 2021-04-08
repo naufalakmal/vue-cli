@@ -1,16 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="container">
+    <nav>
+      <!-- directive untuk membuat link tautan antar component -->
+      <!-- <router-link to="/">Home | </router-link>
+      <router-link to="/about">About</router-link> -->
+      <!-- Named Routes klo misal ada yg diubah gausah ganti kya yg diatas-->
+      <router-link :to="{name: 'Home'}">Home</router-link> |
+      <router-link :to="{name: 'About'}">About</router-link> |
+      <router-link to="/user/Akmal">User</router-link>
+    </nav>
+
+<!-- pada saat route navigasi di akses otomatis router view akan dirender -->
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
